@@ -1,28 +1,35 @@
-// ejercicio 7, escribir una funcion recursiva para elevar un numero
-//a una p�tencia
-Proceso Ejercicio_7
-	Definir  base,exponente Como Entero;
+Proceso Ejercicio_7_5b
+	Definir  matriz, filas, columnas,i,j como entero;
+	Dimension matriz[100,100]; // dimensiona una matriz grande para que el usuario realice una matriz de menor dimension 
 	
-	pedirDatos(base,exponente); // argumentos
-	Escribir 'la potencia es]: ', potencia(base,exponente); 
-FinProceso
-SubProceso pedirDatos(base Por Referencia, exponente Por Referencia) //  argumentos a ingresar
+	// Pedimos el numero de filas al usuario
+	Escribir "Digite el numero de fials para la matriz ";
+	Leer filas;
 	
-	Escribir Sin Saltar ' Escriba una base: ";
-	Leer base;
-	Escribir Sin Saltar ' digite un exponente : ";
-	Leer exponente;
-FinSubProceso
+	// Pedirmos al usaurio que ingrese el numero de columnas
+	Escribir 'Digite el numero de columnas para la matriz';
+	Leer columnas;
+	
+	//llenamos la matriz
+	
+	para i<-0 hasta filas-1 Hacer
+		para j<-0 hasta columnas-1 Hacer
+			Escribir " ingrese el valor a la posici�n fila ",i, " y columna ",j;
+			Leer matriz[i,j];
+		FinPara
+	FinPara
+	
+	// Mostra una matriz
+	para i<- 0 hasta filas-1 con paso 1 Hacer
+		para j<-0 Hasta columnas -1 Con Paso 1 Hacer
+			Escribir Sin Saltar matriz[i,j], " ";
+			
+		FinPara
+		Escribir  "";// salto de linea
 
-Funcion retorno <- potencia(base,exponente) // argumentos
-	Definir retorno Como Entero;
-	// caso base
-	si exponente=0 Entonces
-		retorno<- 1;
-		// caso recursivo
-	SiNo
-		retorno<- base * potencia(base,exponente-1); 
-		
-	FinSi
-FinFuncion
+	FinPara
 	
+	Escribir " Final ";
+	
+	
+FinProceso
